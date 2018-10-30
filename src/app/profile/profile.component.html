@@ -1,3 +1,66 @@
-<p>
-  profile works!
-</p>
+<div class="container">
+  <div class="row">
+  <!-- <app-github-form></app-github-form> -->
+  </div>
+<div style="text-align:center">
+  <div class="card">
+   <h1 class="card-header">Github Search Engine!</h1>
+   {{profile.name}} <span>({{profile.login}})</span>
+   {{profile.location}}
+   
+  </div>
+</div>
+
+<div class="card-body">
+<div class="row">
+<!-- <div class="well"> -->
+    <div class="col-md-4">
+        <h2>Profile Photo</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGM9HLGZeGDo-PnjEDaPWk24VdU5VnM-s3glT0gN38nz5wYWug-w" class="img-circle img-responsive" alt="Profile Photo">
+    </div>
+  <div class="col-md-8">
+    <ul>
+      <li *ngIf="profile.info">{{profile.info}}</li>
+      <li  *ngIf="profile.email"><a href="email:{{profile.email}}"></a></li>
+      <li> *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></a></li>
+    </ul>
+   <!-- <h2>User Name :YVONNEANYANGO</h2>
+   <br><br>
+   <h2>Email Address :ivonnahbonswuh@gmail.com</h2>
+   <br><br>
+   <h2>Date Published :20th Dec,2018</h2> -->
+  </div>
+ </div>
+ <!-- <ngx-loading-bar></ngx-loading-bar> -->
+<!-- </div> -->
+</div>
+</div>
+<!-- <div class="container">
+<form action="search" class="Search-form">
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username" (keyup)="findProfile()"> 
+
+</div>
+</form>
+</div> -->
+<div class="container">
+<div class="row">
+ <div class="col-md-6">
+    <button class="btn btn-primary">{{profile.public_repository}}Public Repos</button>
+   <div class="col-md-6">
+    <button class="btn btn-success">{{profile.followers}}Followers</button>
+   </div>
+ </div>
+</div>
+<div class="row">
+ <div class="col-md-6">
+   <button class="btn btn-primary">{{profile.following}}Following</button>
+ </div>
+ <div class="col-md-6">
+   <button onclick="showDescription" class="btn btn-success">{{profile.public_gists}}Public Gists</button>
+ </div>
+</div>
+</div>
+<!-- <p>
+<a href="{{git.html_url}}" class="btn btn-lg" target="_blank">Look for github on Github</a>
+</p> -->
