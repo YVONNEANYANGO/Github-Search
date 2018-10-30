@@ -7,5 +7,11 @@ import 'rxjs/add/operator/map';
 })
 export class ProfileService {
 
-  constructor() { }
+  private userName:string;
+  private clientId = "d4588b95e506f275a7e7"
+  private clientSecret = "56498062089f3a3d95cb4417d3f0403a807e97a0"
+
+  constructor(private http:Http) {
+
+   }
 }
