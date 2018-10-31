@@ -7,11 +7,16 @@ import { ProfileService } from '../profile.service'
 })
 export class ProfileComponent implements OnInit {
   profile:any[];
+  repository:any[];
 
   constructor(private profileService:ProfileService) { 
-    this.profileService.getProfileDetails().subscribe(profile => {
+    this.profileService.fetchProfileDetails().subscribe(profile => {
       console.log(profile);
       this.profile = profile;
+    });
+    this.profileService.fetchProfileRepository().subscribe(repository => {
+      return repository;
+      this.repository = repository
     })
   }
 

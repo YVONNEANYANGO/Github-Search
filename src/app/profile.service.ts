@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-// import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/map';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
@@ -16,8 +16,17 @@ export class ProfileService {
      this.userName = 'YVONNEANYANGO';
    }
  
-  getProfileDetails() {
-     return this.http.get("https://api.github.com/users/" + this.userName + "?clientId" + this.clientId + "&clientSecret=" + this.clientSecret)
-    //  .map(res => res.json());
+  fetchProfileDetails() {
+     return this.http.get("https://api.github.com/users/" + this.userName + "?client_id" + this.clientId + "&clientSecret=" + this.clientSecret)
+     .map(res => res.json());
    }
+
+   fetchProfileRepository() {
+     return this.http.get("https://api.github.com/users/" + this.userName + "/repository?client_id=" + this.clientId + "&clientSecret=" + this.clientSecret)
+     .map(res => res.json());
+   }
+  //  fetchProfileRepository() {
+  //   return this.http.get("https://api.github.com/users/" + this.userName + "/repository?client_id=" + this.clientId + "&clientSecret=" + this.clientSecret)
+  //   .map(res => res.json());
+  //  }
 }
