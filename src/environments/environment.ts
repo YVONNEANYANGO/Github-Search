@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false
+  // apiUrl:  'https://api.github.com/users/YVONNEANYANGO?access_token=1f3b30c872b57a20a37e455406aba36ce7bc95f7',
+  // apiUrlA: 'https://api.github.com/users/YVONNEANYANGO/Repository?access_token=1f3b30c872b57a20a37e455406aba36ce7bc95f7',
+  // apiUrlB: 'https://api.github.com/search/users?q=',
 };
 
 /*

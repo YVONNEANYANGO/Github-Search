@@ -20,9 +20,9 @@
     </div>
   <div class="col-md-8">
     <ul>
-      <li *ngIf="profile.Info"><a href ="{{profile.Info}}"></a></li>
-      <li  *ngIf="profile.email"><a href="{{profile.Email}}"></a></li>
-      <li *ngIf="profile.blog"><a href="{{profile.Blog}}" target="_blank">{{profile.blog}}</a></li>
+      <li *ngIf="profile.bio"><a href ="{{profile.bio}}"></a></li>
+      <li  *ngIf="profile.email"><a href=" emailto:{{profile.email}}">{{profile.email}}</a></li>
+      <li *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
     </ul>
    <!-- <h2>User Name :YVONNEANYANGO</h2>
    <br><br>
@@ -35,14 +35,14 @@
 <!-- </div> -->
 </div>
 </div>
-<!-- <div class="container">
+<div class="container">
 <form action="search" class="Search-form">
 <div class="form-group">
   <input type="text" class="form-control" placeholder="Search git users with username"  name="username" (keyup)="findProfile()"> 
 
 </div>
 </form>
-</div> -->
+</div>
 <div class="container">
 <div class="row">
  <div class="col-md-6">
@@ -67,6 +67,10 @@
   <h2 class="card-header">Repositories</h2>
 </div>
 <div class="card-body" *ngFor="let repo of repository">
-  
+  <p>
+      {{repo.name}}
+    <a href="{{repo.html_url}}" target="_blank" class="btn btn-danger pull-right">View this project on Github</a>
+  </p>
+  <p>{{repository.description}}</p>
 </div>
 </div>

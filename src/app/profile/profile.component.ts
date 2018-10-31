@@ -6,20 +6,20 @@ import { ProfileService } from '../profile.service'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  profile:any[];
-  repository:any[];
+  profile;
+  repository;
 
   constructor(private profileService:ProfileService) { 
-    this.profileService.fetchProfileDetails().subscribe(profile => {
+    this.profileService.fetchProfileDetails('marvinchomba').subscribe(profile => {
       console.log(profile);
       this.profile = profile;
     });
-    this.profileService.fetchProfileRepository().subscribe(repository => {
-      return repository;
+    this.profileService.fetchProfileRepository('marvinchomba').subscribe(repository => {
+      console.log(repository);
       this.repository = repository
     })
   }
-
+ 
   ngOnInit() {
   }
 

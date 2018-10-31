@@ -8,7 +8,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class ProfileService {
 
-  private userName:string;
+  private userName:"YVONNEANYANGO";
   private clientId = "d4588b95e506f275a7e7"
   private clientSecret = "56498062089f3a3d95cb4417d3f0403a807e97a0"
 
@@ -16,13 +16,13 @@ export class ProfileService {
      this.userName = 'YVONNEANYANGO';
    }
  
-  fetchProfileDetails() {
-     return this.http.get("https://api.github.com/users/" + this.userName + "?client_id" + this.clientId + "&clientSecret=" + this.clientSecret)
+  fetchProfileDetails(name) {
+     return this.http.get("https://api.github.com/users/" + name + "?client_id" + this.clientId + "&clientSecret=" + this.clientSecret)
      .map(res => res.json());
    }
 
-   fetchProfileRepository() {
-     return this.http.get("https://api.github.com/users/" + this.userName + "/repository?client_id=" + this.clientId + "&clientSecret=" + this.clientSecret)
+   fetchProfileRepository(name) {
+     return this.http.get("https://api.github.com/users/" + name + "/repos?client_id=" + this.clientId + "&clientSecret=" + this.clientSecret)
      .map(res => res.json());
    }
   //  fetchProfileRepository() {
