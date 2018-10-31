@@ -3,7 +3,7 @@ h1 {
     text-align: center;
     font-size: 50px;
     font-weight: bolder;
-    text-shadow: darkgoldenrod;
+    text-shadow: 2px 2px lightgreen;
 }
 
 h2 {
@@ -13,4 +13,8 @@ h2 {
 }
 .container {
     background-color: plum;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:5px;
+    padding-bottom:5px;
 }
