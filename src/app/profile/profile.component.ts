@@ -10,11 +10,11 @@ export class ProfileComponent implements OnInit {
   repository;
 
   constructor(private profileService:ProfileService) { 
-    this.profileService.fetchProfileDetails('marvinchomba').subscribe(profile => {
+    this.profileService.fetchProfileDetails('theonilahtash').subscribe(profile => {
       console.log(profile);
       this.profile = profile;
     });
-    this.profileService.fetchProfileRepository('marvinchomba').subscribe(repository => {
+    this.profileService.fetchProfileRepository('theonilahtash').subscribe(repository => {
       console.log(repository);
       this.repository = repository
     })
